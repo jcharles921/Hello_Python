@@ -1,0 +1,126 @@
+Big one
+
+
+
+
+## Read dataset
+Import panda as pd
+df = pd.read_csv('data.csv') 
+Or 
+df =pd.read_excel(‘Data.cl’)
+
+
+
+#Delete Empty Cells 
+new_df = df.dropna() 
+print(new_df.to_string())
+
+
+
+
+#Replace Null Values with 130(a number)
+df.fillna(130, inplace = True)
+print(df.to_string()) # for a specific column	
+df["Calories"].fillna(130, inplace = True)
+print(df.to_string())
+
+## Print results
+df.to_csv('result2.txt', index=False)
+
+
+# Replace with Mode
+df = pd.read_csv('data.csv')
+x = df["Calories"].mode()[0]
+df["Calories"].fillna(x, inplace = True)
+print(df.to_string())
+
+
+#Replace with Median 
+df = pd.read_csv('data.csv') 
+x = df["Calories"].median() df["Calories"].fillna(x, inplace = True) print(df.to_string()) 
+#Replace with Mean df = pd.read_csv('data.csv') x = df["Calories"].mean() df["Calories"].fillna(x, inplace = True) print(df.to_string()) 
+
+
+
+
+#Convert into a correct format 
+import pandas as pd df = pd.read_csv('data.csv') df['Date'] = pd.to_datetime(df['Date']) 
+print(df.to_string())
+
+
+#Delete row with wrong format df = pd.read_csv('data.csv') df['Date'] = pd.to_datetime(df['Date']) 
+df.dropna(subset=['Date'], inplace = True) 
+print(df.to_string())
+
+
+#Replacing Values 
+import pandas as pd df = pd.read_csv('data.csv') df.loc[7,'Duration'] = 45 print(df.to_string()) 
+
+
+#Replace Value by Loop through the Column df = pd.read_csv('data.csv') for x in df.index: 
+if df.loc[x, "Duration"] > 120: df.loc[x, "Duration"] = 120 
+print(df.to_string()) 
+
+
+
+#Replace Value by Loop through the Column df = pd.read_csv('data.csv') for x in df.index: 
+if df.loc[x, "Duration"] > 120: 
+  df.loc[x, "Duration"] = 120 
+print(df.to_string()) 
+
+#Removing Rows 
+df = pd.read_csv('data.csv') for x in df.index: 
+if df.loc[x, "Duration"] > 120: 
+df.drop(x, inplace = True) 
+print(df.to_string()) 
+ 
+#Discovering Duplicates 
+import pandas as pd df = pd.read_csv('data.csv')
+print(df.duplicated())
+
+ #Removing Duplicates df = pd.read_csv('data.csv')
+ df.drop_duplicates(inplace = True)
+ print(df.to_string()) 
+
+
+
+#Ploting
+import pandas as pd
+import matplotlib.pyplot as plt
+
+input ("Show plotting...")
+df = pd.read_excel('Data.xlsx')
+df.plot()
+plt.show()
+
+
+
+#Load File into a DataFrame
+input ("Load Files Into a DataFrame...")
+df = pd.read_excel('Data.xlsx')
+print(df.to_string())
+#Describe the Data Frame
+input ("Press Enter to describe the Dataframe...")
+print (df.describe())
+
+#Sort the Data Frame
+input ("Press Enter Sort the Dataframe...")
+print (df.sort_values("SNAMES "))
+
+#Filter the DataFrame
+input ("Press Enter To Filter the Dataframe...")
+print (df.filter(["SNAMES ","QUIZZES "]))
+
+#Filter Columns Contain aA...
+input ("Press Enter to Filter Columns Contain aA..")
+print (df.filter(regex ='[aA]'))
+#Group Data Frame
+input ("Press Enter to Group Student by Semester..")
+print (df.groupby(['Semester']).mean())
+
+#Find Correlation
+input ("Press to find correlation..")
+print(df.corr())
+
+
+

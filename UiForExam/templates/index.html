@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the TUTO</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body style=" display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;">
+    <h1>Hello this the HOME PAGE</h1>
+    <h2>Here you can find the list of the exams questions</h2>
+    <ul>
+        <li>I. To clean the dataset
+            <button>
+                <a href="http://127.0.0.1:8000/clean">Clean</a>
+            </button>
+
+        </li>
+        <li>II. To train the model
+            
+            <ul>
+              <li>  II.1. Find the training and testing accuracy percentage 
+                    
+                <button>
+                    <a href="http://127.0.0.1:8000/accuracy">Accuracy</a>
+                </button>
+            </li>
+            <li> II.2.Create a persisting model with the algorithm that give the best learning accuracy
+                <button>
+                    <a href="http://127.0.0.1:8000/createJoblib">Create the joblib </a>
+                </button>
+            </li>
+            <li>
+            III.3. Create the UI for the persisting model 
+                <button>
+                    <a href="http://127.0.0.1:8000/result">UI</a>
+                </button>
+                
+            </li>
+            </ul>
+
+        </li>
+    
+    </ul>
+
+
+    
+</body>
+</html>

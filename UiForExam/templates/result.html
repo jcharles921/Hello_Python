@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Form</title>
+</head>
+<body>
+    <h1>Prediction Form</h1>
+    <form method="post" action="predict">
+        {% csrf_token %}
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br><br>
+        <label for="sex">Sex:</label>
+        <input type="number" name="sex" required><br><br>
+    
+        <br><br>
+        <input type="submit" value="predict">
+    </form>
+</body>
+</html>

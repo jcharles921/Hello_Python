@@ -152,6 +152,6 @@ def predictform(request):
         return render(request, 'formresult.html', {'prediction': prediction})
 
 
-
+# shit
 
    
